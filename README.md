@@ -12,7 +12,7 @@ gem 'simple_tabler', '~> 0.1.0'
 
 ## Usage
 
-First of all, you should read the module Simple Tabler.
+First of all, you should import the module Simple Tabler.
 
 ```.rb
 require "simple_tabler"
