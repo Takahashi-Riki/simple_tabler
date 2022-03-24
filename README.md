@@ -2,6 +2,8 @@
 
 Simple Tabler helps you to make a table in Terminal
 
+It can be used as a gem.(https://rubygems.org/gems/simple_tabler)
+
 ## Installation
 
 Add simple_tabler to your Gemfile.
