@@ -1,32 +1,59 @@
-# SimpleTabler
+# Simple Tabler
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simple_tabler`. To experiment with that code, run `bin/console` for an interactive prompt.
+Simple Tabler helps you to make a table in Terminal
 
-TODO: Delete this and the text above, and describe your gem
+It can be used as a gem.(https://rubygems.org/gems/simple_tabler)
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add simple_tabler to your Gemfile.
 
-    $ bundle add simple_tabler
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install simple_tabler
+```Gemfile
+gem 'simple_tabler', '~> 0.1.0'
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+First of all, you should import the module Simple Tabler.
 
-## Development
+```.rb
+require "simple_tabler"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Now, you can create a table from an array like blow.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```.rb
+a = [
+  [
+    "ABCDE_Mail",
+    "example@example.com",
+    "abcdefg_" * 10
+  ],
+  [
+    "XYZ_TV",
+    "Taro Yamada",
+    "qwerty" * 10
+  ]
+]
+
+puts a.generate_table(["Service", "username", "password"], 30)
+
+#|============================================================================================|
+#|Service                       |username                      |password                      |
+#|============================================================================================|
+#|ABCDE_Mail                    |example@example.com           |abcdefg_abcdefg_abcdefg_abcdef|
+#|                              |                              |g_abcdefg_abcdefg_abcdefg_abcd|
+#|                              |                              |efg_abcdefg_abcdefg_          |
+#|--------------------------------------------------------------------------------------------|
+#|XYZ_TV                        |Taro Yamada                   |qwertyqwertyqwertyqwertyqwerty|
+#|                              |                              |qwertyqwertyqwertyqwertyqwerty|
+#|                              |                              |                              |
+#|--------------------------------------------------------------------------------------------|
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simple_tabler.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Takahashi-Riki/simple_tabler.
 
 ## License
 
