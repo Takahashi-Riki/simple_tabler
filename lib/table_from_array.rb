@@ -1,17 +1,18 @@
 class TableFromArray
-  attr_reader :content_of_table, :column_names
+  attr_reader :content_of_table
   
-  def initialize(column_size, column_names, scale)
+  def initialize(array, column_names, scale)
     @content_of_table = ""
-    @column_size      = column_size
-    @column_names     = column_names
-    @scale            = scale
+    @column_size = array[0].size
+    @scale  = scale
+    self.add_header(column_names)
+    self.add_content(array)
   end
 
-  def add_header
-    if @column_names
+  def add_header(column_names=nil)
+    if column_names
       add_separation("=")
-      add_row(@column_names)
+      add_row(column_names)
       add_separation("=")
     else
       add_separation("-")
@@ -32,13 +33,13 @@ class TableFromArray
 
     def add_row(row_materials)
       content_of_row  = ""
-      number_of_lines = max_length_of_array_element(row_materials) / @scale + 1
-      for i in 0...number_of_lines do
+      number_of_lines = (max_length_of_array_element(row_materials).to_f / @scale).ceil
+      (0...number_of_lines).each do |i|
         line = "|"
-        for row_material in row_materials do
+        row_materials.each do |row_material|
           row_material_sliced_for_this_line = row_material[@scale*i...@scale*(i+1)].to_s
-          space_to_fill_the_blank           = " " * (@scale - row_material_sliced_for_this_line.size)
-          line                             += row_material_sliced_for_this_line + space_to_fill_the_blank + "|"
+          space_to_fill_the_blank = " " * (@scale - row_material_sliced_for_this_line.size)
+          line += row_material_sliced_for_this_line + space_to_fill_the_blank + "|"
         end
         content_of_row += line + "\n"
       end
@@ -46,7 +47,6 @@ class TableFromArray
     end
 
     def add_separation(mark)
-      separation         = "|" + mark * (@scale * @column_size + @column_size - 1) + "|" + "\n"
-      @content_of_table += separation
+      @content_of_table += "|" + mark * (@scale * @column_size + @column_size - 1) + "|" + "\n"
     end
 end

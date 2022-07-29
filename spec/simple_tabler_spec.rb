@@ -137,7 +137,6 @@ RSpec.describe SimpleTabler do
           |--------------------------------------------------------------------------------------------|
           |XYZ_TV                        |Taro Yamada                   |qwertyqwertyqwertyqwertyqwerty|
           |                              |                              |qwertyqwertyqwertyqwertyqwerty|
-          |                              |                              |                              |
           |--------------------------------------------------------------------------------------------|
         TEXT
       }
@@ -146,7 +145,6 @@ RSpec.describe SimpleTabler do
           |--------------------------------------------------------------------------------------------------------------------------|
           |ABCDE_Mail                              |example@example.com                     |abcdefg_abcdefg_abcdefg_abcdefg_abcdefg_|
           |                                        |                                        |abcdefg_abcdefg_abcdefg_abcdefg_abcdefg_|
-          |                                        |                                        |                                        |
           |--------------------------------------------------------------------------------------------------------------------------|
           |XYZ_TV                                  |Taro Yamada                             |qwertyqwertyqwertyqwertyqwertyqwertyqwer|
           |                                        |                                        |tyqwertyqwertyqwerty                    |
@@ -162,12 +160,10 @@ RSpec.describe SimpleTabler do
           |                    |                    |efg_abcdefg_abcdefg_|
           |                    |                    |abcdefg_abcdefg_abcd|
           |                    |                    |efg_abcdefg_abcdefg_|
-          |                    |                    |                    |
           |--------------------------------------------------------------|
           |XYZ_TV              |Taro Yamada         |qwertyqwertyqwertyqw|
           |                    |                    |ertyqwertyqwertyqwer|
           |                    |                    |tyqwertyqwertyqwerty|
-          |                    |                    |                    |
           |--------------------------------------------------------------|
         TEXT
       }
@@ -178,12 +174,10 @@ RSpec.describe SimpleTabler do
           |                    |                    |efg_abcdefg_abcdefg_|
           |                    |                    |abcdefg_abcdefg_abcd|
           |                    |                    |efg_abcdefg_abcdefg_|
-          |                    |                    |                    |
           |--------------------------------------------------------------|
           |XYZ_TV              |Taro Yamada         |qwertyqwertyqwertyqw|
           |                    |                    |ertyqwertyqwertyqwer|
           |                    |                    |tyqwertyqwertyqwerty|
-          |                    |                    |                    |
           |--------------------------------------------------------------|
         TEXT
       }
