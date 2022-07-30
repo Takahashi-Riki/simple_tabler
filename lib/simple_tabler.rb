@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "simple_tabler/version"
-require_relative "table_from_array"
+require_relative "simple_tabler/table"
 
 class Array; include SimpleTabler; end
 
@@ -19,8 +19,8 @@ module SimpleTabler
       raise ArgumentError, "All child arrays should have same amount of element with column names you passed as an argument."
     end
 
-    table_generated_from_array = TableFromArray.new(self, column_names, scale)
-    return table_generated_from_array.content_of_table
+    table_generated_from_array = Table.new(self, column_names, scale)
+    return table_generated_from_array.content
   end
 
   # return true if dimension of array equal two.
